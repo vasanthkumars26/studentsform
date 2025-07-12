@@ -1,148 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Form to Table</title>
-  <style>
-    body{
-      background-color: #fffae6;
-    }
-    table,  td {
-      
-      border-collapse: collapse;
-      border-radius: 15px;
-    }
-    
-    table {
-      width: 30%;
-      margin-top: 100px;
-      margin-left:32% ;
-      background-color: antiquewhite;
-      border-radius: 5px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-    }
-
-    th, td {
-      padding: 8px 12px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #f4cdcd;
-      text-transform: uppercase;
-      
-    }
-
-    .delete-btn {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .form-table td {
-      padding: 6px;
-    }
-
-    button {
-      padding: 6px 12px;
-    }
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<script src="script.js"></script>
 <body>
-
-  <table class="form-table">
-    <tr>
-      <td>Name</td>
-      <td><input type="text" id="name"></td>
-    </tr>
-    <tr>
-      <td>Age</td>
-      <td><input type="number" id="age"></td>
-    </tr>
-    <tr>
-      <td>Gender</td>
-      <td>
-        <input type="radio" name="gender" value="Male" checked> Male
-        <input type="radio" name="gender" value="Female"> Female
-      </td>
-    </tr>
-    <tr>
-      <td>Course</td>
-      <td>
-        <select id="course">
-          <option value="JavaScript">JavaScript</option>
-          <option value="PYTHON">PYTHON</option>
-          <option value="HTML">HTML</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>Email</td>
-      <td><input type="email" id="email"></td>
-    </tr>
-    <tr>
-      <td colspan="2" style="text-align:center;">
-        <button onclick="saveData(event)" id="btn2">Save</button>
-      </td>
-    </tr>
-  </table>
-
-  <table id="displayTable" >
-    <div >
-    <thead class="cen">
-      <tr class="cen">
-        <th>NAME</th>
-        <th>AGE</th>
-        <th>COURSE</th>
-        <th>GENDER</th>
-        <th>EMAIL</th>
-        <th>ACTION</th>
-      </tr>
-    </thead>
-    </div>
-    <tbody>
-      <!-- Rows will be added here -->
-    </tbody>
-  </table>
-
-  <script>
-    function saveData(event) {
-      const name = document.getElementById("name").value;
-      const age = document.getElementById("age").value;
-      const gender = document.querySelector('input[name="gender"]:checked').value;
-      const course = document.getElementById("course").value;
-      const email = document.getElementById("email").value;
-
-      if (!name || !age || !email) {
-        alert("Please fill all fields!");
-        return;
-      }
-
-     
-
-      const table = document.getElementById("displayTable").getElementsByTagName('tbody')[0];
-      const newRow = table.insertRow();
-
-      newRow.innerHTML = `
-        <td>${name}</td>
-        <td>${age}</td>
-        <td>${course}</td>
-        <td>${gender}</td>
-        <td>${email}</td>
-        <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
-      `;  
-    }
-
-    function deleteRow(btn) {
-      const row = btn.parentNode.parentNode;
-      row.remove();
-    }
-  </script>  
-
+    <h1>
+        Guess the Number from 1 to 5
+    </h1>
+    <input type="text" placeholder="Enter the number" id="inputt">
+    <button id="btn" onclick="now()">Check</button>
+    <p id="guessed">You are Right/Wrong</p>
+    <p id="guess">Available guesses:3</p>
 </body>
 </html>
