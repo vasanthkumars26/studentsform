@@ -1,0 +1,62 @@
+<style>
+    .popup{
+        color:aliceblue;
+        background-color: black;
+        padding: 5px;
+        width:150px;
+        margin: 10px;
+        position: relative;
+        z-index: 3;
+        border: 1px solid whitesmoke;
+        justify-items: center;
+        margin-left: 650px;
+        margin-top: 200px;
+    }
+    .hidden{
+        display:none;
+    }
+    .po{
+        text-align: center;
+        border: white solid 1px;
+        width: 20px;
+        margin-left: 120px;
+    }
+    .po:hover{
+        cursor: pointer;
+    }
+    .overlay{
+        background-color: black;
+        opacity: 0.2;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+</style>
+<button id="btn1">click</button>
+
+<div class="overlay hidden"></div>
+<div class="popup hidden">
+    <p class="po">x</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab fugiat eius est beatae. Deserunt in, perspiciatis tempore laborum dolores aliquam modi nam dicta sequi mollitia deleniti quam beatae facilis dolorum?</p>
+</div>
+
+<script>
+    var a = document.querySelector(".popup")
+    var b = document.getElementById("btn1")
+    var c = document.querySelector(".po")
+    var d = document.querySelector(".overlay")
+
+    b.addEventListener("click",function(){
+        a.classList.remove("hidden");
+        d.classList.remove("hidden")
+    })  
+
+    c.addEventListener("click",function(){
+         a.classList.add("hidden");
+         d.classList.add("hidden")
+    })
+    
+</script>

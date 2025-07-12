@@ -1,0 +1,25 @@
+<button id="btn">Add</button>
+<button id="del">Delete</button>
+<div id="hey">
+
+</div>
+<script>
+
+    
+
+
+    var b = document.getElementById("hey")
+
+
+    var c = document.getElementById("btn")
+    c.addEventListener("click", function () {
+        var a = document.createElement("p")
+        a.textContent = "HEY AVANTHI"
+        console.log(a)
+        b.append(a)
+    })
+    var del = document.getElementById("del")
+    del.addEventListener("click",function(){
+        b.remove()
+    })
+</script>

@@ -1,0 +1,41 @@
+<!-- <button class="btn">Click</button>
+
+<script>
+    var a = document.querySelector(".btn")
+    a.addEventListener("click",function(){
+        alert("HELLO")
+    })
+</script> -->
+<style>
+    .red{
+        background-color: red;
+        height: 100px;
+        width: 100px;
+    }
+    .black{
+        background-color:black;
+        height: 100px;
+        width: 100px;
+    }
+    
+</style>
+
+<div class="red">
+      
+</div>
+<button id="btn1">red to black</button>
+<button id="btn2">remove black</button>
+<script>
+    var a = document.getElementById("btn1")
+    var b = document.querySelector(".red")
+    var c = document.getElementById("btn2")
+    
+
+    a.addEventListener("click",function(){
+        b.classList.add("black")
+    })
+
+    c.addEventListener("click",function(){
+        b.classList.remove("black")
+    })
+</script>

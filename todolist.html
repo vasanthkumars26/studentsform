@@ -1,0 +1,21 @@
+<input id="inp" type="text">
+<button id="btn">Add</button>
+
+<ul id="container">
+    
+</ul>
+
+<script>
+    var inp = document.getElementById("inp")
+    var btn = document.getElementById("btn")
+    var container = document.getElementById("container")
+
+    btn.addEventListener("click",function(){
+        var li = document.createElement("li")
+        li.innerHTML=inp.value + '<button onclick= deletee(event)>Delete</button>'
+        container.append(li);
+    })
+    function deletee(event){
+        event.target.parentElement.remove()
+    }
+</script>
